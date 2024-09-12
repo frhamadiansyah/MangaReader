@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Utilities
+import FavoriteStorage
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
@@ -44,5 +45,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel(homeService: HomeServiceMock(), favoriteManager: FavoriteDataManager(manager: CoreDataManager(storageType: .inMemory)), onMangaSelected: { _ in }))
+    HomeView(viewModel: HomeViewModel(homeService: HomeServiceMock(), favoriteManager: FavoriteDataManagerMock(), onMangaSelected: { _ in }))
 }

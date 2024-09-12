@@ -8,6 +8,7 @@
 import SwiftUI
 import MangaDexResponse
 import DependencyContainer
+import FavoriteStorage
 
 final class HomeCoordinator {
 
@@ -45,7 +46,7 @@ final class SearchCoordinator {
     }()
 
     func makeViewController() -> UIViewController {
-        let viewModel = HomeViewModel(homeService: HomeService(apiService: APIService()), favoriteManager: FavoriteDataManager(manager: CoreDataManager()), onMangaSelected: {_ in })
+        let viewModel = HomeViewModel(homeService: HomeService(apiService: APIService()), favoriteManager: FavoriteDataManager(), onMangaSelected: {_ in })
         let homeView = HomeView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: homeView)
         navigationController.setViewControllers([hostingVC], animated: false)

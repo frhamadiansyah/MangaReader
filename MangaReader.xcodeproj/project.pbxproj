@@ -12,6 +12,8 @@
 		753BE8EB2C90102000150ECD /* AppDependencyConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BE8EA2C90102000150ECD /* AppDependencyConfigurer.swift */; };
 		753DB0162C82396600E3AA55 /* MangaDexResponse in Frameworks */ = {isa = PBXBuildFile; productRef = 753DB0152C82396600E3AA55 /* MangaDexResponse */; };
 		7554833C2C8771EA005DF4B2 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 7554833B2C8771EA005DF4B2 /* Utilities */; };
+		7566CC062C933FB600F0F4C0 /* FavoriteStorage in Resources */ = {isa = PBXBuildFile; fileRef = 7566CC052C933FB600F0F4C0 /* FavoriteStorage */; };
+		7566CC082C93400100F0F4C0 /* FavoriteStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7566CC072C93400100F0F4C0 /* FavoriteStorage */; };
 		7576D6BC2C877266008003F8 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 7576D6BB2C877266008003F8 /* Utilities */; };
 		7576D6C02C8808F5008003F8 /* HomeServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6BF2C8808F5008003F8 /* HomeServiceMock.swift */; };
 		7576D6C42C881588008003F8 /* MockMangaList.json in Resources */ = {isa = PBXBuildFile; fileRef = 7576D6C32C881588008003F8 /* MockMangaList.json */; };
@@ -34,14 +36,10 @@
 		75A326002C8225F0006E85D0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A325FF2C8225F0006E85D0 /* APIService.swift */; };
 		75A326052C823887006E85D0 /* MangaDexResponse in Resources */ = {isa = PBXBuildFile; fileRef = 75A326042C823887006E85D0 /* MangaDexResponse */; };
 		75B461BC2C8828BE004F22A1 /* MockManga.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B461BB2C8828BE004F22A1 /* MockManga.json */; };
-		75BFA0A42C8EBFA3002AF9A1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75BFA0A22C8EBFA3002AF9A1 /* Model.xcdatamodeld */; };
-		75BFA0A62C8EC3B1002AF9A1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BFA0A52C8EC3B1002AF9A1 /* CoreDataManager.swift */; };
 		75CE5B822C82AF41005A6AF7 /* MangaDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE5B812C82AF41005A6AF7 /* MangaDetailCoordinator.swift */; };
 		75CE5B842C82B08E005A6AF7 /* MangaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE5B832C82B08E005A6AF7 /* MangaDetailView.swift */; };
 		75CE5B862C857B50005A6AF7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE5B852C857B50005A6AF7 /* HomeViewModel.swift */; };
 		75CE5B882C858781005A6AF7 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE5B872C858781005A6AF7 /* RequestHelper.swift */; };
-		75F9D7242C916A9000573F84 /* FavoriteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9D7232C916A9000573F84 /* FavoriteDataManager.swift */; };
-		75F9D7272C916EAB00573F84 /* FavoriteDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9D7262C916EAB00573F84 /* FavoriteDataManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +63,7 @@
 		750C7E492C86D86500D7CD98 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		753BE8EA2C90102000150ECD /* AppDependencyConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyConfigurer.swift; sourceTree = "<group>"; };
 		7554833B2C8771EA005DF4B2 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
+		7566CC052C933FB600F0F4C0 /* FavoriteStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FavoriteStorage; sourceTree = "<group>"; };
 		7576D6BF2C8808F5008003F8 /* HomeServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceMock.swift; sourceTree = "<group>"; };
 		7576D6C32C881588008003F8 /* MockMangaList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockMangaList.json; sourceTree = "<group>"; };
 		7576D6C52C8818A9008003F8 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
@@ -92,14 +91,10 @@
 		75A326042C823887006E85D0 /* MangaDexResponse */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MangaDexResponse; sourceTree = "<group>"; };
 		75AA31CB2C900887003D0E79 /* DependencyContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DependencyContainer; sourceTree = "<group>"; };
 		75B461BB2C8828BE004F22A1 /* MockManga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockManga.json; sourceTree = "<group>"; };
-		75BFA0A32C8EBFA3002AF9A1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		75BFA0A52C8EC3B1002AF9A1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		75CE5B812C82AF41005A6AF7 /* MangaDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDetailCoordinator.swift; sourceTree = "<group>"; };
 		75CE5B832C82B08E005A6AF7 /* MangaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDetailView.swift; sourceTree = "<group>"; };
 		75CE5B852C857B50005A6AF7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		75CE5B872C858781005A6AF7 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
-		75F9D7232C916A9000573F84 /* FavoriteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataManager.swift; sourceTree = "<group>"; };
-		75F9D7262C916EAB00573F84 /* FavoriteDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7566CC082C93400100F0F4C0 /* FavoriteStorage in Frameworks */,
 				753DB0162C82396600E3AA55 /* MangaDexResponse in Frameworks */,
 				753BE8E92C900FF600150ECD /* DependencyContainer in Frameworks */,
 				7576D6BC2C877266008003F8 /* Utilities in Frameworks */,
@@ -190,7 +186,6 @@
 		75A325D92C8184D8006E85D0 /* MangaReaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				75F9D7252C916E8600573F84 /* MangaStorage */,
 				750C7E4B2C875BBD00D7CD98 /* Home */,
 				75A325DA2C8184D8006E85D0 /* MangaReaderTests.swift */,
 				7576D6C52C8818A9008003F8 /* APIServiceMock.swift */,
@@ -252,6 +247,7 @@
 		75A326032C823750006E85D0 /* Package */ = {
 			isa = PBXGroup;
 			children = (
+				7566CC052C933FB600F0F4C0 /* FavoriteStorage */,
 				75AA31CB2C900887003D0E79 /* DependencyContainer */,
 				7554833B2C8771EA005DF4B2 /* Utilities */,
 				75A326042C823887006E85D0 /* MangaDexResponse */,
@@ -262,9 +258,6 @@
 		75BFA0A12C8EBE94002AF9A1 /* MangaStorage */ = {
 			isa = PBXGroup;
 			children = (
-				75BFA0A22C8EBFA3002AF9A1 /* Model.xcdatamodeld */,
-				75BFA0A52C8EC3B1002AF9A1 /* CoreDataManager.swift */,
-				75F9D7232C916A9000573F84 /* FavoriteDataManager.swift */,
 			);
 			path = MangaStorage;
 			sourceTree = "<group>";
@@ -276,14 +269,6 @@
 				75CE5B832C82B08E005A6AF7 /* MangaDetailView.swift */,
 			);
 			path = MangaDetail;
-			sourceTree = "<group>";
-		};
-		75F9D7252C916E8600573F84 /* MangaStorage */ = {
-			isa = PBXGroup;
-			children = (
-				75F9D7262C916EAB00573F84 /* FavoriteDataManagerTests.swift */,
-			);
-			path = MangaStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +291,7 @@
 				753DB0152C82396600E3AA55 /* MangaDexResponse */,
 				7576D6BB2C877266008003F8 /* Utilities */,
 				753BE8E82C900FF600150ECD /* DependencyContainer */,
+				7566CC072C93400100F0F4C0 /* FavoriteStorage */,
 			);
 			productName = MangaReader;
 			productReference = 75A325C02C8184D6006E85D0 /* MangaReader.app */;
@@ -399,6 +385,7 @@
 				75A325CD2C8184D8006E85D0 /* Assets.xcassets in Resources */,
 				75A325D02C8184D8006E85D0 /* Base in Resources */,
 				7554833C2C8771EA005DF4B2 /* Utilities in Resources */,
+				7566CC062C933FB600F0F4C0 /* FavoriteStorage in Resources */,
 				75A325CB2C8184D6006E85D0 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,10 +415,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A325F62C8185E0006E85D0 /* RootCoordinator.swift in Sources */,
-				75F9D7242C916A9000573F84 /* FavoriteDataManager.swift in Sources */,
 				75CE5B862C857B50005A6AF7 /* HomeViewModel.swift in Sources */,
 				753BE8EB2C90102000150ECD /* AppDependencyConfigurer.swift in Sources */,
-				75BFA0A42C8EBFA3002AF9A1 /* Model.xcdatamodeld in Sources */,
 				75CE5B822C82AF41005A6AF7 /* MangaDetailCoordinator.swift in Sources */,
 				75CE5B882C858781005A6AF7 /* RequestHelper.swift in Sources */,
 				75A325F82C818600006E85D0 /* RootTabBarController.swift in Sources */,
@@ -443,7 +428,6 @@
 				75A325FD2C81867C006E85D0 /* HomeCoordinator.swift in Sources */,
 				75A326002C8225F0006E85D0 /* APIService.swift in Sources */,
 				75CE5B842C82B08E005A6AF7 /* MangaDetailView.swift in Sources */,
-				75BFA0A62C8EC3B1002AF9A1 /* CoreDataManager.swift in Sources */,
 				75A325C62C8184D6006E85D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A325DB2C8184D8006E85D0 /* MangaReaderTests.swift in Sources */,
-				75F9D7272C916EAB00573F84 /* FavoriteDataManagerTests.swift in Sources */,
 				7576D6C82C8819F8008003F8 /* HomeServiceTest.swift in Sources */,
 				7576D6C62C8818A9008003F8 /* APIServiceMock.swift in Sources */,
 			);
@@ -804,25 +787,15 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = MangaDexResponse;
 		};
+		7566CC072C93400100F0F4C0 /* FavoriteStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FavoriteStorage;
+		};
 		7576D6BB2C877266008003F8 /* Utilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utilities;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		75BFA0A22C8EBFA3002AF9A1 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				75BFA0A32C8EBFA3002AF9A1 /* Model.xcdatamodel */,
-			);
-			currentVersion = 75BFA0A32C8EBFA3002AF9A1 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = /Users/fandrianrhamadiansyah/fandrianLocal/OpenSourceProject/Swift/MangaReader/MangaReader/Module/MangaStorage/Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 75A325B82C8184D6006E85D0 /* Project object */;
 }

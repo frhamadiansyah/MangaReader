@@ -7,15 +7,12 @@
 
 import Foundation
 import DependencyContainer
+import FavoriteStorage
 
 enum AppDependencyConfigurer {
     
     static func configure() {
-        let coreDataManager = CoreDataManager()
-        DC.shared.register(type: .singleInstance(coreDataManager), for: CoreDataManager.self)
-        
-        
-        let favoriteManager = FavoriteDataManager(manager: coreDataManager)
+        let favoriteManager = FavoriteDataManager()
         
         
         DC.shared.register(type: .singleInstance(favoriteManager), for: FavoriteDataManagerProtocol.self)

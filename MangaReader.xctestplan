@@ -24,6 +24,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:MangaReader.xcodeproj",
         "identifier" : "75A325DF2C8184D8006E85D0",
@@ -35,6 +36,13 @@
         "containerPath" : "container:MangaReader\/Package\/DependencyContainer",
         "identifier" : "DependencyContainerTests",
         "name" : "DependencyContainerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MangaReader\/Package\/FavoriteStorage",
+        "identifier" : "FavoriteStorageTests",
+        "name" : "FavoriteStorageTests"
       }
     }
   ],

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MangaDexResponse
+import FavoriteStorage
 
 final class MangaDetailCoordinator {
     
@@ -17,7 +18,7 @@ final class MangaDetailCoordinator {
     }
     
     func makeViewController(with manga: MangaModel) -> UIViewController {
-        let viewModel = HomeViewModel(homeService: HomeService(apiService: APIService()), favoriteManager: FavoriteDataManager(manager: CoreDataManager()), onMangaSelected: {_ in})
+        let viewModel = HomeViewModel(homeService: HomeService(apiService: APIService()), favoriteManager: FavoriteDataManager(), onMangaSelected: {_ in})
         let view = HomeView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: view)
         hostingVC.title = manga.title

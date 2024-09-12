@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MangaDexResponse
+import FavoriteStorage
 
 final class HomeViewModel: ObservableObject {
 
@@ -18,7 +19,6 @@ final class HomeViewModel: ObservableObject {
     private let favoriteManager: FavoriteDataManagerProtocol
     private let onMangaSelected: (MangaModel) -> Void
     private var didCallOnAppearForTheFirstTime = false
-    private var favorites: [FavoriteMangaEntity] = []
 
     init(homeService: HomeServing, favoriteManager: FavoriteDataManagerProtocol, onMangaSelected: @escaping (MangaModel) -> Void) {
         self.homeService = homeService
@@ -44,9 +44,8 @@ final class HomeViewModel: ObservableObject {
         let offset = 0
         Task { @MainActor in
             do {
-                favorites = try await favoriteManager.fetchAllFavorite()
                 
-                let favoriteMangas = favorites.compactMap({$0.manga_id})
+                let favoriteMangas = try await favoriteManager.fetchAllFavoriteMangaId()
                 
                 mangas = try await homeService.fetchFavoriteManga(favoriteMangaIds: favoriteMangas, limit: limit, offset: offset)
                 
@@ -60,27 +59,18 @@ final class HomeViewModel: ObservableObject {
     
     func removeFavoriteManga(manga: MangaModel) {
         let mangaIdToBeRemoved = manga.id
-        if let entity = favorites.first(where: { entity in
-            return entity.manga_id == mangaIdToBeRemoved
-        }) {
-            Task { @MainActor in
-                do{
-                    try await favoriteManager.removeFavorite(favoriteMangaEntity: entity)
-                    
-                    favorites.removeAll { entity in
-                        return entity.manga_id == mangaIdToBeRemoved
-                    }
-                    
-                    mangas.removeAll { model in
-                        return model.id == manga.id
-                    }
-                } catch {
-                    if let err = error as? MangaReaderError {
-                        homeError = err
-                    }
+        Task { @MainActor in
+            do{
+                try await favoriteManager.removeFavorites(withId: mangaIdToBeRemoved)
+                
+                mangas.removeAll { model in
+                    return model.id == manga.id
+                }
+            } catch {
+                if let err = error as? MangaReaderError {
+                    homeError = err
                 }
             }
-            
         }
     }
 }
