@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "648C2942-70E3-4BBC-8773-B6B8A3B98B48",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MangaReader.xcodeproj",
+      "identifier" : "75A325BF2C8184D6006E85D0",
+      "name" : "MangaReader"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MangaReader.xcodeproj",
+        "identifier" : "75A325D52C8184D8006E85D0",
+        "name" : "MangaReaderTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MangaReader.xcodeproj",
+        "identifier" : "75A325DF2C8184D8006E85D0",
+        "name" : "MangaReaderUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MangaReader\/Package\/DependencyContainer",
+        "identifier" : "DependencyContainerTests",
+        "name" : "DependencyContainerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
