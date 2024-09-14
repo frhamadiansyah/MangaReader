@@ -21,6 +21,10 @@ enum AppDependencyConfigurer {
             HomeService(apiService: APIService())
         }), for: HomeServing.self)
         
+        DC.shared.register(type: .closureBased({
+            SearchMangaService(apiService: APIService())
+        }), for: SearchMangaServing.self)
+        
 //        Task {
 ////            try? await favoriteManager.clearAllFavorites()
 //            try? await favoriteManager.addFavorite(mangaId:"b73371d4-02dd-4db0-b448-d9afa3d698f1", mangaTitle:"ASDASDA")

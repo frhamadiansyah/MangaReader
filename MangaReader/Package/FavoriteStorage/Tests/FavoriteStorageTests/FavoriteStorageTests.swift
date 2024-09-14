@@ -69,4 +69,30 @@ final class FavoriteStorageTests: XCTestCase {
         XCTAssertEqual(result.count, 2)
         XCTAssertEqual(result.first, "manga_id_2")
     }
+    
+    func test_if_is_favorite_manga_returns_true() async throws {
+        try await sut.addFavorite(mangaId: "manga_id")
+        try await sut.addFavorite(mangaId: "manga_id_2")
+        try await sut.addFavorite(mangaId: "manga_id_3")
+        
+        //When
+        
+        let result = try await sut.checkIfFavoriteManga(mangaId: "manga_id")
+
+        //Then
+        XCTAssert(result)
+    }
+    
+    func test_if_is_favorite_manga_returns_false() async throws {
+        try await sut.addFavorite(mangaId: "manga_id")
+        try await sut.addFavorite(mangaId: "manga_id_2")
+        try await sut.addFavorite(mangaId: "manga_id_3")
+        
+        //When
+        
+        let result = try await sut.checkIfFavoriteManga(mangaId: "manga_id_4")
+
+        //Then
+        XCTAssert(!result)
+    }
 }

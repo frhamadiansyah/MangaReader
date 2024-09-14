@@ -1,8 +1,8 @@
 //
-//  HomeCoordinator.swift
+//  SearchMangaCoordinator.swift
 //  MangaReader
 //
-//  Created by Fandrian Rhamadiansyah on 30/08/24.
+//  Created by Fandrian Rhamadiansyah on 13/09/24.
 //
 
 import SwiftUI
@@ -10,7 +10,8 @@ import MangaDexResponse
 import DependencyContainer
 import FavoriteStorage
 
-final class HomeCoordinator {
+
+final class SearchMangaCoordinator {
 
     private let navigationController: UINavigationController = {
         let navigationController = UINavigationController()
@@ -19,13 +20,11 @@ final class HomeCoordinator {
     }()
 
     func makeViewController() -> UIViewController {
-        
-        let service = DC.shared.resolve(type: .closureBased, for: HomeServing.self)
-        let dataManager = DC.shared.resolve(type: .singleInstance, for: FavoriteDataManagerProtocol.self)
-        
-        let viewModel = HomeViewModel(homeService: service, favoriteManager: dataManager, onMangaSelected: pushMangaDetail(_ :))
-        let homeView = HomeView(viewModel: viewModel)
-        let hostingVC = UIHostingController(rootView: homeView)
+        let service = DC.shared.resolve(type: .closureBased, for: SearchMangaServing.self)
+
+        let viewModel = SearchMangaViewModel(service: service, onMangaSelected: pushMangaDetail(_ :))
+        let searchView = SearchMangaView(viewModel: viewModel)
+        let hostingVC = UIHostingController(rootView: searchView)
         hostingVC.navigationItem.largeTitleDisplayMode = .never
         navigationController.setViewControllers([hostingVC], animated: false)
         navigationController.navigationItem.largeTitleDisplayMode = .inline

@@ -27,10 +27,10 @@ final class HomeViewModel: ObservableObject {
     }
 
     func onAppear() {
-        guard didCallOnAppearForTheFirstTime == false else {
-            return
-        }
-        didCallOnAppearForTheFirstTime = true
+//        guard didCallOnAppearForTheFirstTime == false else {
+//            return
+//        }
+//        didCallOnAppearForTheFirstTime = true
         fetchFavoriteMangas()
     }
 
@@ -52,6 +52,7 @@ final class HomeViewModel: ObservableObject {
             } catch {
                 if let err = error as? MangaReaderError {
                     homeError = err
+                    showError.toggle()
                 }
             }
         }
@@ -69,6 +70,7 @@ final class HomeViewModel: ObservableObject {
             } catch {
                 if let err = error as? MangaReaderError {
                     homeError = err
+                    showError.toggle()
                 }
             }
         }

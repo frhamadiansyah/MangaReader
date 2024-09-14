@@ -52,6 +52,15 @@ struct RequestHelper {
         return URLRequest(url: url!)
     }
     
+    func searchMangaRequest(title: String, limit: Int = queryLimit, offset: Int = 0) -> URLRequest {
+        var components = generateBaseRequest(limit: limit, offset: offset)
+
+        components.queryItems?.append(URLQueryItem(name: "title", value: title))
+    
+        let url = components.url
+        return URLRequest(url: url!)
+    }
+    
     
     
 }

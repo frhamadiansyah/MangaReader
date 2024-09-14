@@ -12,4 +12,5 @@ public protocol FavoriteDataManagerProtocol {
     func addFavorite(mangaId: String) async throws
     func removeFavorites(withId: String) async throws
     func clearAllFavorites() async throws
+    func checkIfFavoriteManga(mangaId: String) async throws -> Bool
 }

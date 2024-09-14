@@ -12,7 +12,7 @@ final class RootCoordinator {
     func makeInitialView() -> UIViewController {
         let homeView = HomeCoordinator().makeViewController()
         
-        let searchView = SearchCoordinator().makeViewController()
+        let searchView = SearchMangaCoordinator().makeViewController()
         
         let tabBarController = RootTabBarController(viewControllers: [homeView, searchView])
         return tabBarController

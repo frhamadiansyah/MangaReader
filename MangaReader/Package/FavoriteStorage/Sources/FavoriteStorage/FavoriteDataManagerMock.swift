@@ -8,6 +8,10 @@
 import Foundation
 
 public class FavoriteDataManagerMock: FavoriteDataManagerProtocol {
+    public func checkIfFavoriteManga(mangaId: String) async throws -> Bool {
+        return true
+    }
+    
     public func fetchAllFavoriteMangaId() async throws -> [String] {
         return []
     }

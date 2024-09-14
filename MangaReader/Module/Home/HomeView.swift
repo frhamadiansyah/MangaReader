@@ -29,11 +29,9 @@ struct HomeView: View {
                     }
             }
             
-            Button(action: {
-                print("ASDASD")
-            }, label: {
-                Text("Button SAMPLE LABEL")
-            })
+        }
+        .refreshable {
+            viewModel.onAppear()
         }
         
         .onAppear {

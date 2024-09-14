@@ -27,6 +27,14 @@ public class FavoriteDataManager: FavoriteDataManagerProtocol {
         try await manager.save()
 
     }
+    
+    public func checkIfFavoriteManga(mangaId: String) async throws -> Bool {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FavoriteMangaEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "manga_id = %@", mangaId)
+        return try await manager.context.perform {
+            return try fetchRequest.execute().count > 0
+        }
+    }
 
     
     public func removeFavorites(withId: String) async throws {
@@ -56,8 +64,15 @@ public class FavoriteDataManager: FavoriteDataManagerProtocol {
     
     public init () {
         self.manager = CoreDataManager.shared
-        
-//        testSetup()
+
+    }
+    
+    public init(forTesting: Bool) {
+        if forTesting {
+            self.manager = CoreDataManager(storageType: .inMemory)
+        } else {
+            self.manager = CoreDataManager.shared
+        }
     }
     
     func testSetup() {

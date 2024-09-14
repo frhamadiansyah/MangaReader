@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MangaDexResponse
+import DependencyContainer
 import FavoriteStorage
 
 final class MangaDetailCoordinator {
@@ -18,16 +19,16 @@ final class MangaDetailCoordinator {
     }
     
     func makeViewController(with manga: MangaModel) -> UIViewController {
-        let viewModel = HomeViewModel(homeService: HomeService(apiService: APIService()), favoriteManager: FavoriteDataManager(), onMangaSelected: {_ in})
-        let view = HomeView(viewModel: viewModel)
+        let dataManager = DC.shared.resolve(type: .singleInstance, for: FavoriteDataManagerProtocol.self)
+        
+        let viewModel = MangaDetailViewModel(manga: manga, favoriteManager: dataManager, onCreatorSelected: pushCreatorDetail(_ :))
+        let view = MangaDetailView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: view)
-        hostingVC.title = manga.title
+        hostingVC.navigationItem.largeTitleDisplayMode = .never
         return hostingVC
     }
 
-//    private func pushMangaDetail(withIdentifier id: String) {
-//        let gateway =
-//        let view = gateway.makeArtistDetailModule(navigationController: navigationController, artistIdentifier: id)
-//        navigationController?.pushViewController(view, animated: true)
-//    }
+    func pushCreatorDetail(_ model: CreatorModel) {
+
+    }
 }

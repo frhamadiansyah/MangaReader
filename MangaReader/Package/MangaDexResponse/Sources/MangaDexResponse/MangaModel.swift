@@ -22,6 +22,10 @@ public struct MangaModel: Identifiable {
     public var tags: [String] = []
     
     public init(_ response: MangaDexData) {
+        guard case .manga = response.type else {
+            return
+        }
+        
         id = response.id
         
         guard case .manga(let manga) = response.attributes else {
@@ -61,6 +65,10 @@ public struct MangaModel: Identifiable {
     }
     
     public init(_ response: ChildMangaDexData) {
+        guard case .manga = response.type else {
+            return
+        }
+        
         id = response.id
         
         guard case .manga(let manga) = response.attributes else {
@@ -88,10 +96,6 @@ public struct MangaModel: Identifiable {
         self.id = id
         self.title = title
         self.description = description
-    }
-    
-    public init() {
-        
     }
 
 }
