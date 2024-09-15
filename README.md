@@ -1,7 +1,7 @@
 # MangaReader
 
 ## About
-MangaDokusha is a free, open-source unofficial MangaDex manga reader app. It's an improved modular version of [MangaDokusha.]([https://api.mangadex.org/docs/](https://github.com/frhamadiansyah/MangaDokusha)). All data and content fetch from [MangaDex API.](https://api.mangadex.org/docs/). 
+MangaDokusha is a free, open-source unofficial MangaDex manga reader app. It's an improved modular version of [MangaDokusha.]([https://api.mangadex.org/docs/](https://github.com/frhamadiansyah/MangaDokusha)). All data and content fetch from [MangaDex API.](https://api.mangadex.org/docs/) 
 Worked in progress.
 
 ## License
