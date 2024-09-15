@@ -1,7 +1,8 @@
-# MangaDokusha
+# MangaReader
 
 ## About
-MangaDokusha is free, open source unofficial MangaDex manga reader app. It uses SwiftUI 2.0 with minimum requirement of iOS 15.0. All data and content fetch from [MangaDex API.](https://api.mangadex.org/docs/)
+MangaDokusha is a free, open-source unofficial MangaDex manga reader app. It's an improved modular version of [MangaDokusha.]([https://api.mangadex.org/docs/](https://github.com/frhamadiansyah/MangaDokusha)). All data and content fetch from [MangaDex API.](https://api.mangadex.org/docs/). 
+Worked in progress.
 
 ## License
 ```
@@ -19,7 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Modifications copyright (C) 2022 Fandrian Rhamadiansyah
+Modifications copyright (C) 2024 Fandrian Rhamadiansyah
 ```
 
 ## Disclaimer
