@@ -21,7 +21,7 @@ final class MangaDetailCoordinator {
     func makeViewController(with manga: MangaModel) -> UIViewController {
         let dataManager = DC.shared.resolve(type: .singleInstance, for: FavoriteDataManagerProtocol.self)
         
-        let viewModel = MangaDetailViewModel(manga: manga, favoriteManager: dataManager, onCreatorSelected: pushCreatorDetail(_ :))
+        let viewModel = MangaDetailViewModel(manga: manga, favoriteManager: dataManager, onCreatorSelected: pushCreatorDetail(_ :), onChaptersSelecter: pushShowChapters(_ :))
         let view = MangaDetailView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: view)
         hostingVC.navigationItem.largeTitleDisplayMode = .never
@@ -30,5 +30,11 @@ final class MangaDetailCoordinator {
 
     func pushCreatorDetail(_ model: CreatorModel) {
 
+    }
+    
+    func pushShowChapters(_ model: MangaModel) {
+        let coordinator = ListChaptersCoordinator(navigationController: navigationController)
+        let new = coordinator.makeViewController(with: model)
+        navigationController?.pushViewController(new, animated: true)
     }
 }

@@ -234,6 +234,9 @@ public struct RawMangaModel: Decodable {
 public struct RawMangaChapterModel: Decodable {
     public let chapter: String
     public let title: String?
+    public let externalUrl: String?
+    public let translatedLanguage: String
+    public let pages: Int
     
 }
 

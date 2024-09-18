@@ -14,6 +14,7 @@ final class MangaDetailViewModel: ObservableObject {
     private let favoriteManager: FavoriteDataManagerProtocol
     
     private let onCreatorSelected: (CreatorModel) -> Void
+    private let onChaptersSelected: (MangaModel) -> Void
     private var didCallOnAppearForTheFirstTime = false
     
     let manga: MangaModel
@@ -22,10 +23,11 @@ final class MangaDetailViewModel: ObservableObject {
     @Published var homeError: MangaReaderError?
     @Published var showError: Bool = false
     
-    init(manga: MangaModel, favoriteManager: FavoriteDataManagerProtocol, onCreatorSelected: @escaping (CreatorModel) -> Void) {
+    init(manga: MangaModel, favoriteManager: FavoriteDataManagerProtocol, onCreatorSelected: @escaping (CreatorModel) -> Void, onChaptersSelecter: @escaping (MangaModel) -> Void) {
         self.favoriteManager = favoriteManager
         self.manga = manga
         self.onCreatorSelected = onCreatorSelected
+        self.onChaptersSelected = onChaptersSelecter
     }
     
     func fetchIsFavoriteValue() {
@@ -70,5 +72,9 @@ final class MangaDetailViewModel: ObservableObject {
             isFavoriteManga = await favoriteButtonPressed()
         }
         
+    }
+    
+    func openChapters() {
+        onChaptersSelected(manga)
     }
 }

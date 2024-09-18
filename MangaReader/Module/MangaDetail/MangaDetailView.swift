@@ -43,6 +43,12 @@ struct MangaDetailView: View {
                 Text(viewModel.manga.description)
                     .font(.body)
                 
+                Button(action: {
+                    viewModel.openChapters()
+                }, label: {
+                    Text("Open Chapters")
+                })
+                
             }
             .padding(.horizontal)
             .onAppear(perform: {

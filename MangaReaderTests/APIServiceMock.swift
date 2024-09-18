@@ -25,7 +25,6 @@ struct APIServiceMock: Requestable {
     
     func apiRequest(request: URLRequest) async throws -> MangaDexResponse {
         fetchMangasExpectation?.fulfill()
-        
 //        let bundlePath = Bundle.main.path(forResource: mockType.rawValue, ofType: "json")
 //        let jsonData = try String(contentsOfFile: bundlePath!).data(using: .utf8)
 //        let response  = try JSONDecoder().decode(MangaDexResponse.self, from: jsonData!)

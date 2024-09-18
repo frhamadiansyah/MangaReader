@@ -17,7 +17,7 @@ struct SearchMangaView: View {
             HStack {
                 TextField("Search Manga", text: $viewModel.searchText)
                 Button(action: {
-                    viewModel.searchManga()
+                    viewModel.newQueryMangaSearch()
                 }, label: {
                     Label("Search", systemImage: "magnifyingglass")
                         .padding(5)
@@ -34,8 +34,17 @@ struct SearchMangaView: View {
                         .onTapGesture {
                             viewModel.didSelectManga(manga)
                         }
+                        .onAppear {
+                            viewModel.loadMoreIfNeeded(mangaId: manga.id)
+                        }
+                }
+                if viewModel.isLoading {
+                    ProgressView()
                 }
 
+            }
+            .refreshable {
+                viewModel.newQueryMangaSearch()
             }
         }
         .padding(.horizontal)

@@ -61,6 +61,40 @@ struct RequestHelper {
         return URLRequest(url: url!)
     }
     
+    func generateListChaptersRequest(mangaId: String, limit: Int, offset: Int, ascending: Bool) -> URLRequest {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.mangadex.org"
+        components.path = "/chapter"
+        components.queryItems = [
+            URLQueryItem(name: "manga", value: mangaId),
+            URLQueryItem(name: "limit", value: "\(limit)"),
+            URLQueryItem(name: "offset", value: "\(offset)"),
+            
+            // add all contentRating
+            URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue),
+            URLQueryItem(name: "contentRating[]", value: ContentRating.suggestive.rawValue),
+            URLQueryItem(name: "contentRating[]", value: ContentRating.erotica.rawValue),
+            URLQueryItem(name: "contentRating[]", value: ContentRating.safeContent.rawValue),
+            
+            // add all include
+            URLQueryItem(name: "includes[]", value: "scanlation_group"),
+            URLQueryItem(name: "includes[]", value: "manga"),
+            URLQueryItem(name: "includes[]", value: "user"),
+            
+            URLQueryItem(name: "translatedLanguage[]", value: "en"),
+            
+        ]
+        if ascending {
+            components.queryItems?.append(URLQueryItem(name: "order[chapter]", value: "asc"))
+        } else {
+            components.queryItems?.append(URLQueryItem(name: "order[chapter]", value: "desc"))
+        }
+        
+        let url = components.url
+        return URLRequest(url: url!)
+    }
+    
     
     
 }

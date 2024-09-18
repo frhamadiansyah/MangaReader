@@ -18,9 +18,11 @@ final class MangaDetailViewModelTest: XCTestCase {
         let favorite = FavoriteDataManager(forTesting: true)
         try? await favorite.addFavorite(mangaId:"manga_id")
 
-        let sut = MangaDetailViewModel(manga: manga, favoriteManager: favorite) { model in
+        let sut = MangaDetailViewModel(manga: manga, favoriteManager: favorite, onCreatorSelected: { model in
             
-        }
+        }, onChaptersSelecter: {model in
+            
+        })
         
         //setup add favorite
         let result = await sut.checkIfMangaIsFavorite()
@@ -37,6 +39,7 @@ final class MangaDetailViewModelTest: XCTestCase {
 
         let sut = MangaDetailViewModel(manga: manga, favoriteManager: favorite) { model in
             
+        } onChaptersSelecter: { manga in
         }
         
         //setup add favorite
@@ -53,6 +56,8 @@ final class MangaDetailViewModelTest: XCTestCase {
         try? await favorite.addFavorite(mangaId:"manga_id")
 
         let sut = MangaDetailViewModel(manga: manga, favoriteManager: favorite) { model in
+            
+        } onChaptersSelecter: { manga in
             
         }
         
@@ -73,6 +78,7 @@ final class MangaDetailViewModelTest: XCTestCase {
 
         let sut = MangaDetailViewModel(manga: manga, favoriteManager: favorite) { model in
             
+        } onChaptersSelecter: {manga in
         }
         
         //setup add favorite
