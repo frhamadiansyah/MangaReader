@@ -28,9 +28,9 @@ final class ListChaptersCoordinator {
         return hostingVC
     }
     
-    func pushChapter(_ manga: ChapterModel) {
-//        let coordinator = MangaDetailCoordinator(navigationController: navigationController)
-//        let new = coordinator.makeViewController(with: manga)
-//        navigationController?.pushViewController(new, animated: true)
+    func pushChapter(_ chapter: ChapterModel) {
+        let coordinator = ReadChapterCoordinator(navigationController: navigationController)
+        let new = coordinator.makeViewController(with: chapter)
+        navigationController?.pushViewController(new, animated: true)
     }
 }

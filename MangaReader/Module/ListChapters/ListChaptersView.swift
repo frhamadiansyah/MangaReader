@@ -15,39 +15,37 @@ struct ListChaptersView: View {
     var body: some View {
         VStack {
             HStack {
-                
+                Image(systemName: "arrow.up.arrow.down")
+                    .opacity(0)
                 Spacer()
                 Text(viewModel.manga.title)
                 Spacer()
+                Button(action: {
+                    viewModel.ascending.toggle()
+                    viewModel.reloadChapters()
+                }, label: {
+                    if viewModel.ascending {
+                        Image(systemName: "arrow.up.arrow.down")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.blue, .red)
+                    } else {
+                        Image(systemName: "arrow.up.arrow.down")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.red, .blue)
+                    }
+                    
+                })
                 
             }
-            .overlay(content: {
-                HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        viewModel.ascending.toggle()
-                        viewModel.reloadChapters()
-                    }, label: {
-                        if viewModel.ascending {
-                            Image(systemName: "arrow.up.arrow.down")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.blue, .red)
-                        } else {
-                            Image(systemName: "arrow.up.arrow.down")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.red, .blue)
-                        }
-                        
-                    })
-                    
-                }
-            })
             .padding()
             
             List {
                 ForEach(viewModel.chapters) { chapter in
-                    Text("\(chapter.chapterTitleString())")
+                    Button(action: {
+                        viewModel.openChapter(chapter)
+                    }, label: {
+                        Text("\(chapter.chapterTitleString())")
+                    })
                         .onAppear {
                             viewModel.loadMoreIfNeeded(chapterId: chapter.id)
                         }

@@ -14,7 +14,9 @@ final class RootCoordinator {
         
         let searchView = SearchMangaCoordinator().makeViewController()
         
-        let tabBarController = RootTabBarController(viewControllers: [homeView, searchView])
+        let settingsView = SettingsCoordinator().makeViewController()
+        
+        let tabBarController = RootTabBarController(viewControllers: [homeView, searchView, settingsView])
         return tabBarController
     }
 }

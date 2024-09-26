@@ -48,6 +48,7 @@ struct MangaDetailView: View {
                 }, label: {
                     Text("Open Chapters")
                 })
+                .padding()
                 
             }
             .padding(.horizontal)

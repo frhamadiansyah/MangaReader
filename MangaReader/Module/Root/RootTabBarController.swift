@@ -29,11 +29,15 @@ final class RootTabBarController: UITabBarController {
         }
         
         let firstItem = items[0]
-        firstItem.title = "ms_tabbar_home_title"
-        firstItem.image = UIImage(systemName: "house")
+        firstItem.title = "Favorites"
+        firstItem.image = UIImage(systemName: "star")
         
         let secondItem = items[1]
-        secondItem.title = "ms_tabbar_home_title"
-        secondItem.image = UIImage(systemName: "checkmark")
+        secondItem.title = "Search"
+        secondItem.image = UIImage(systemName: "magnifyingglass")
+        
+        let thirdItem = items[2]
+        thirdItem.title = "Settings"
+        thirdItem.image = UIImage(systemName: "gear.circle")
     }
 }

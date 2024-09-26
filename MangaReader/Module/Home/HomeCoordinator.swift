@@ -27,6 +27,7 @@ final class HomeCoordinator {
         let homeView = HomeView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: homeView)
         hostingVC.navigationItem.largeTitleDisplayMode = .never
+        hostingVC.title = "Favorite"
         navigationController.setViewControllers([hostingVC], animated: false)
         navigationController.navigationItem.largeTitleDisplayMode = .inline
         return navigationController

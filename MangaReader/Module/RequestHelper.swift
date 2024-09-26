@@ -10,6 +10,8 @@ import MangaDexResponse
 
 struct RequestHelper {
     
+    private let showNSFWKey: String = "showNSFWKey"
+    
     func generateBaseRequest(limit: Int = queryLimit, offset: Int = 0) -> URLComponents {
         var components = URLComponents()
         components.scheme = "https"
@@ -20,7 +22,7 @@ struct RequestHelper {
             URLQueryItem(name: "offset", value: "\(offset)"),
     
             // add all contentRating
-            URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue),
+//            URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.suggestive.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.erotica.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.safeContent.rawValue),
@@ -38,6 +40,9 @@ struct RequestHelper {
             
     
         ]
+        if UserDefaults.standard.bool(forKey: showNSFWKey) {
+            components.queryItems?.append(URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue))
+        }
         return components
     }
     
@@ -72,7 +77,7 @@ struct RequestHelper {
             URLQueryItem(name: "offset", value: "\(offset)"),
             
             // add all contentRating
-            URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue),
+//            URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.suggestive.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.erotica.rawValue),
             URLQueryItem(name: "contentRating[]", value: ContentRating.safeContent.rawValue),
@@ -85,6 +90,11 @@ struct RequestHelper {
             URLQueryItem(name: "translatedLanguage[]", value: "en"),
             
         ]
+        
+        if UserDefaults.standard.bool(forKey: showNSFWKey) {
+            components.queryItems?.append(URLQueryItem(name: "contentRating[]", value: ContentRating.pornographic.rawValue))
+        }
+        
         if ascending {
             components.queryItems?.append(URLQueryItem(name: "order[chapter]", value: "asc"))
         } else {

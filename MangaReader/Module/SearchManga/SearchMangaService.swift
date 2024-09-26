@@ -20,7 +20,6 @@ struct SearchMangaService: SearchMangaServing {
         
         let components = RequestHelper().searchMangaRequest(title: title, limit: limit, offset: offset)
     
-    
         if let url = components.url {
             let request = URLRequest(url: url)
             let response = try await apiService.apiRequest(request: request)
@@ -31,9 +30,6 @@ struct SearchMangaService: SearchMangaServing {
                         return model
                     }
                     return nil
-                }
-                if result.isEmpty {
-                    throw MangaReaderError.noMangaFound
                 }
                 return result
 

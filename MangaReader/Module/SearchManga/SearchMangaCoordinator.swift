@@ -28,6 +28,7 @@ final class SearchMangaCoordinator {
         hostingVC.navigationItem.largeTitleDisplayMode = .never
         navigationController.setViewControllers([hostingVC], animated: false)
         navigationController.navigationItem.largeTitleDisplayMode = .inline
+        hostingVC.title = "Search Manga"
         return navigationController
     }
     

@@ -71,5 +71,9 @@ final class ListChaptersViewModel: ObservableObject {
         offset += limit
         fetchChapters(ascending: ascending)
     }
+    
+    func openChapter(_ chapter: ChapterModel) {
+        onChapterSelected(chapter)
+    }
 }
 
